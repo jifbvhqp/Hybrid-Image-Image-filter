@@ -24,10 +24,10 @@ python main.py
 每Col代表不同參數<br>
 第一Col $d_0 = 10$,第二Col $d_0 = 50$,第三Col $d_0 = 100$<br>
 
-### 經高通濾波過濾後的圖 
+### 高通濾波(濾波結果與原圖疊加)
 ![5](https://user-images.githubusercontent.com/49235533/210935655-c08e88ac-bd3f-4ba3-a66c-7318e133de1b.jpg)<br>
 
-### 經低通濾波過濾後的圖
+### 低通濾波
 ![5](https://user-images.githubusercontent.com/49235533/210935724-05615d30-43d8-4863-a988-5b59c006003d.jpg)<br>
 
 ### Hybrid Image
