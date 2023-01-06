@@ -2,8 +2,6 @@
 
 Hybrid Image & 不同頻率域濾波器不同參數之比較 <br>
 ## Part Result (Hybrid Image)
-![0](https://user-images.githubusercontent.com/49235533/210935891-535b8eda-8f37-45b7-8774-eb048e975481.jpg)
-![1](https://user-images.githubusercontent.com/49235533/210935894-69bbbcd1-255b-4add-afa9-077d7deb5817.jpg)
 ![2](https://user-images.githubusercontent.com/49235533/210935900-ca72b6ac-7a74-440b-8048-0e5f46d3d756.jpg)
 
 ## Install requirements
