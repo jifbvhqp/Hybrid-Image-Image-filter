@@ -115,10 +115,10 @@ if __name__ == '__main__':
 	idx,idx2 = 0,0
 
 	for im1,im2 in zip(imgL1,imgL2):
-		img1 = cv2.imread(im1, cv2.IMREAD_COLOR)
+		img1 = cv2.imread('input/'+im1, cv2.IMREAD_COLOR)
 		img1 = cv2.resize(img1,(225,265))
 		
-		img2 = cv2.imread(im2, cv2.IMREAD_COLOR)
+		img2 = cv2.imread('input/'+im2, cv2.IMREAD_COLOR)
 		img2 = cv2.resize(img2,(225,265))
 		hybrid = Hybrid(img1,img2,kernel_type,D_0_value,idx,sigma1 = 25,sigma2 = 10)
 		hybrids.append(hybrid)
