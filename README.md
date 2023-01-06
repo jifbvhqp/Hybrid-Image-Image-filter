@@ -6,7 +6,7 @@ Hybrid Image & 不同頻率域濾波器不同參數之比較 <br>
 第一Col 使用理想濾波器<br>
 第二Col 使用巴特沃斯高通濾波器 (n=2)<br>
 第二Col 使用高斯濾波器<br>
-高通濾波參數 d_0a = 25, 低通濾波參數 = 10<br>
+高通濾波參數 $d_0$ = 25, 低通濾波參數 $d_0$ = 10<br>
 ![2](https://user-images.githubusercontent.com/49235533/210935900-ca72b6ac-7a74-440b-8048-0e5f46d3d756.jpg)
 
 ## Install requirements
