@@ -4,7 +4,7 @@ Hybrid Image & 不同頻率域濾波器不同參數之比較 <br>
 ## Result (Hybrid Image)
 每Col代表不同濾波器
 第一Col 使用理想濾波器<br>
-第二Col 使用巴特沃斯高通濾波器 ($n=2$)<br>
+第二Col 使用巴特沃斯高通濾波器 $n=2$<br>
 第二Col 使用高斯濾波器<br>
 高通濾波參數 $d_0 = 25$, 低通濾波參數 $d_0 = 10$<br>
 ![2](https://user-images.githubusercontent.com/49235533/210935900-ca72b6ac-7a74-440b-8048-0e5f46d3d756.jpg)
@@ -23,7 +23,7 @@ python main.py
 ### 經高通濾波過濾後的圖 
 每Row代表不同高通濾波器<br>
 第一Row使用理想高通濾波器<br>
-第二Row使用巴特沃斯高通濾波器 ($n=2$)<br>
+第二Row使用巴特沃斯高通濾波器 $n=2$<br>
 第三Row使用高斯高通濾波器<br>
 每Col代表不同參數<br>
 第一Col $d_0 = 10$<br>
@@ -43,7 +43,7 @@ python main.py
 ### 經低通濾波過濾後的圖
 每Row代表不同低通濾波器<br>
 第一Row使用理想低通濾波器<br>
-第二Row使用巴特沃斯低通濾波器 (n=2)<br>
+第二Row使用巴特沃斯低通濾波器 $n=2$<br>
 第三Row使用高斯低通濾波器<br>
 每Col代表不同參數<br>
 第一Col $d_0 = 10$<br>
