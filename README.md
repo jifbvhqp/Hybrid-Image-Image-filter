@@ -62,7 +62,9 @@ $$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{j2\pi(ux/m + 
   H(u,v) = 1 - e^{-D^2(u,v)/2D_{0}^{2}}
   $$<br>
   <br>
-  
+  <br>
+  <br>
+  <br>
   $$ D(u,v)= \sqrt{(u - \frac{P}{2})^2 + (v - \frac{Q}{2})^2}　$$
 
 ## Full Result
