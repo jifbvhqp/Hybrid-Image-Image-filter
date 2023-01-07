@@ -16,9 +16,11 @@ pip install -r requirements.txt
 ```C
 python main.py
 ```
-## Fourier公式:
+## 2維影像離散Fourier轉換公式:
 $$F(u,v) = \sum_{x=0}^{m-1} \sum_{y=0}^{n-1} f(x,y)e^{-j2\pi(\frac{u x}{m} + \frac{v y}{n})} $$
 
+## 2維影像離散反Fourier轉換公式:
+$$\frac{1}{mn} f(x,y) = \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{-j2\pi(\frac{u x}{m} + \frac{v y}{n})} $$
 
 ## Full Result
 第一Row使用理想濾波器<br>
