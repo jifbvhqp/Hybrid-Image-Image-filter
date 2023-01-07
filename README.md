@@ -20,7 +20,7 @@ python main.py
 ### Fourier轉換:
 $$F(u,v) = \sum_{x=0}^{m-1} \sum_{y=0}^{n-1} f(x,y)e^{-j2\pi(\frac{u x}{m} + \frac{v y}{n})} $$ <br>
 ### 反Fourier轉換:
-$$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{-j2\pi(\frac{u x}{m} + \frac{v y}{n})}$$
+$$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{-j2\pi(ux/m + vy/n)}$$
 
 ## 濾波器:
 ### 理想低通濾波器:
