@@ -17,7 +17,7 @@ pip install -r requirements.txt
 python main.py
 ```
 ## Fourier公式:
-$F(u,v) = \sum^{M-1}_{x=0} $
+$$F(u,v) = \sum_{x=0} $$
 
 
 ## Full Result
