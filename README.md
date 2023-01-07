@@ -16,6 +16,9 @@ pip install -r requirements.txt
 ```C
 python main.py
 ```
+## Fourier公式:
+$F(u,v)$
+
 
 ## Full Result
 第一Row使用理想濾波器<br>
