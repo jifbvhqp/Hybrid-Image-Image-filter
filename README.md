@@ -27,8 +27,8 @@ $$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{-j2\pi(\frac{
 $$
 H(u,v) =
 \begin{cases}
-1,  & \text{if $D(u,v) \geq D_0$} \\
-0, & \text{if $D(u,v) \geq D_0$}
+1,  & \text{if $D(u,v) \le D_0$} \\
+0, & \text{if $D(u,v) \gt D_0$}
 \end{cases}
 $$
 
