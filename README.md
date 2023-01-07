@@ -17,7 +17,7 @@ pip install -r requirements.txt
 python main.py
 ```
 ## Fourier公式:
-$F(u,v) = \sum_{i=1}^{10} t_i$
+$F(u,v) = \sum_{i=1}^{10}$
 
 
 ## Full Result
