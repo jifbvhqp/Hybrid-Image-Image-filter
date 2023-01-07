@@ -17,7 +17,7 @@ pip install -r requirements.txt
 python main.py
 ```
 ## Fourier公式:
-$$F(u,v) = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} f(x,y)e^{-j2\pi(\frac{ux}{M} + \frac{vy}{N})} $$
+$$F(u,v) = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} f(x,y)e^{-j2\pi(\frac{u x}{M} + \frac{v y}{N})} $$
 
 
 ## Full Result
