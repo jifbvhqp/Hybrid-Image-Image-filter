@@ -24,25 +24,46 @@ $$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{-j2\pi(\frac{
 
 ## 濾波器:
 ### 理想低通濾波器:
-$$
-H(u,v) =
-\begin{cases}
-1,  & \text{if $D(u,v) \le D_0$} \\
-0, & \text{if $D(u,v) \gt D_0$}
-\end{cases}
-$$<br>
+  $$
+  H(u,v) =
+  \begin{cases}
+  1,  & \text{if $D(u,v) \le D_0$} \\
+  0, & \text{if $D(u,v) \gt D_0$}
+  \end{cases}
+  $$<br>
 
 ### 巴特沃斯低通濾波器:
-$$
-H(u,v) = \frac{1}{1 + \left[ D(u,v)/D_0  \right]^{2n} }
-$$<br>
+  $$
+  H(u,v) = \frac{1}{1 + \left[ D(u,v)/D_0  \right]^{2n} }
+  $$<br>
 
 ### 高斯低通濾波器:
-$$
-H(u,v) = e^{-D^2(u,v)/2D_{0}^{2}}
-$$<br>
+  $$
+  H(u,v) = e^{-D^2(u,v)/2D_{0}^{2}}
+  $$<br>
+  <br>
+  
+### 理想高通濾波器:
+  $$
+  H(u,v) =
+  \begin{cases}
+  0,  & \text{if $D(u,v) \le D_0$} \\
+  1, & \text{if $D(u,v) \gt D_0$}
+  \end{cases}
+  $$<br>
 
-$$ D(u,v)= \sqrt{(u - \frac{P}{2})^2 + (v - \frac{Q}{2})^2}　$$
+### 巴特沃斯高通濾波器:
+  $$
+  H(u,v) = 1 - \frac{1}{1 + \left[ D(u,v)/D_0  \right]^{2n} }
+  $$<br>
+
+### 高斯高通濾波器:
+  $$
+  H(u,v) = 1 - e^{-D^2(u,v)/2D_{0}^{2}}
+  $$<br>
+  <br>
+  
+  $$ D(u,v)= \sqrt{(u - \frac{P}{2})^2 + (v - \frac{Q}{2})^2}　$$
 
 ## Full Result
 第一Row使用理想濾波器<br>
