@@ -34,9 +34,13 @@ $$<br>
 
 ### 巴特沃斯低通濾波器:
 $$
-H(u,v) = \frac{1}{1 + \left[ D(u,v)/d_0  \right]^{2n} }
-$$
+H(u,v) = \frac{1}{1 + \left[ D(u,v)/D_0  \right]^{2n} }
+$$<br>
 
+### 高斯低通濾波器:
+$$
+H(u,v) = e^{\frac{-D^2(u,v)}{2D_{0}^{2}}}
+$$<br>
 
 $$ D(u,v)= \sqrt{(u - \frac{P}{2})^2 + (v - \frac{Q}{2})^2}　$$
 
