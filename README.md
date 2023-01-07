@@ -25,10 +25,10 @@ $$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{-j2\pi(\frac{
 ## 濾波器:
 ### 理想濾波器:
 $$
-f(n) =
+H(u,v) =
 \begin{cases}
-\frac{n}{2},  & \text{if $n$ is even} \\
-3n+1, & \text{if $n$ is odd}
+\1,  & \text{if $D(u,v) <= D_0$} \\
+0, & \text{if $D(u,v) > D_0$}
 \end{cases}
 $$
 
