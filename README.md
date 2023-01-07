@@ -30,7 +30,10 @@ H(u,v) =
 1,  & \text{if $D(u,v) \le D_0$} \\
 0, & \text{if $D(u,v) \gt D_0$}
 \end{cases}
-$$
+$$<br>
+
+### 截止頻率:
+$$ D(u,v)= \sqrt{(u - \frac{P}{2})^2 + (v - \frac{Q}{2})^2}　$$
 
 ## Full Result
 第一Row使用理想濾波器<br>
