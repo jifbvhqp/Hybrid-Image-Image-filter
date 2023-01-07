@@ -23,7 +23,7 @@ $$F(u,v) = \sum_{x=0}^{m-1} \sum_{y=0}^{n-1} f(x,y)e^{-j2\pi(\frac{u x}{m} + \fr
 $$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{-j2\pi(\frac{u x}{m} + \frac{v y}{n})}$$
 
 ## 濾波器:
-### 理想濾波器:
+### 理想低通濾波器:
 $$
 H(u,v) =
 \begin{cases}
@@ -32,7 +32,12 @@ H(u,v) =
 \end{cases}
 $$<br>
 
-### 截止頻率:
+### 巴特沃斯低通濾波器:
+$$
+H(u,v) = \{1}{1 + \left[ D(u,v)/d_0  \right]^{2n} }
+$$
+
+
 $$ D(u,v)= \sqrt{(u - \frac{P}{2})^2 + (v - \frac{Q}{2})^2}　$$
 
 ## Full Result
