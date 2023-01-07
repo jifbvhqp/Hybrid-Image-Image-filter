@@ -22,6 +22,15 @@ $$F(u,v) = \sum_{x=0}^{m-1} \sum_{y=0}^{n-1} f(x,y)e^{-j2\pi(\frac{u x}{m} + \fr
 ### 反Fourier轉換:
 $$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{-j2\pi(\frac{u x}{m} + \frac{v y}{n})}$$
 
+## 濾波器:
+### 理想濾波器:
+$$
+f(n) =
+\begin{cases}
+\frac{n}{2},  & \text{if $n$ is even} \\
+3n+1, & \text{if $n$ is odd}
+\end{cases}
+$$
 
 ## Full Result
 第一Row使用理想濾波器<br>
