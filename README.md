@@ -34,7 +34,7 @@ $$<br>
 
 ### 巴特沃斯低通濾波器:
 $$
-H(u,v) = \{1}{1 + \left[ D(u,v)/d_0  \right]^{2n} }
+H(u,v) = \frac{1}{1 + \left[ D(u,v)/d_0  \right]^{2n} }
 $$
 
 
