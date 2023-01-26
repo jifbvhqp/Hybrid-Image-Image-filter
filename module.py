@@ -23,7 +23,7 @@ def salt_pepper_noise(image, fraction, salt_vs_pepper):
 	img[y, x] = 255 
 	return img
 	
-def show(img):
+def show_img(img):
 	cv2.imshow('My Image',img/255)
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()

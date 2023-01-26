@@ -1,7 +1,8 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from module import Dot,GassuianLowPassfilter,ButterworthLowPassfilter,idealLowPassfilter,GassuianHighPassfilter,ButterworthHighPassfilter,idealHighPassfilter,Inv_Fourier,Fourier,Transform,showFilter,show,salt_pepper_noise,gaussian_noise
+from module import Dot,GassuianLowPassfilter,ButterworthLowPassfilter,idealLowPassfilter,GassuianHighPassfilter,ButterworthHighPassfilter,idealHighPassfilter,Inv_Fourier,Fourier,Transform,showFilter,show_img,salt_pepper_noise,gaussian_noise
+import tkinter as tk
 
 def concat_imgh(imgList):
 	if len(imgList) >= 2:
@@ -33,12 +34,13 @@ def LowPassFilter(img,D_0,tp = 'Gassiuan',n = 2):
 		lowPassFilter = ButterworthLowPassfilter(img,D_0,n = n) 
 	else:
 		lowPassFilter = GassuianLowPassfilter(img,D_0)
-		
+	#showFilter(lowPassFilter)
 	res = Dot(FFt_img,lowPassFilter)
 	res = Inv_Fourier(res)
 	res = np.real(res)
 	res = Transform(res)
-	return res
+
+	return res,lowPassFilter
 
 def HighPassFilter(img,D_0,tp = 'Gassiuan',n = 2):	
 	transimg = Transform(img)
@@ -55,7 +57,7 @@ def HighPassFilter(img,D_0,tp = 'Gassiuan',n = 2):
 	res = Inv_Fourier(res)
 	res = np.real(res)
 	res = Transform(res)
-	return res+img,res
+	return res+img,res,HighPassFilter
 
 def Hybrid(img1,img2,kernel_type,D_0_value,idx,sigma1 = 25,sigma2 = 10):
 	HighresImg = []
@@ -68,8 +70,8 @@ def Hybrid(img1,img2,kernel_type,D_0_value,idx,sigma1 = 25,sigma2 = 10):
 		LowresimgList = []
 		
 		for D_0 in D_0_value:
-			highPassres,Edge = HighPassFilter(img1,D_0,tp = tp)
-			lowPassres = LowPassFilter(img2,D_0,tp = tp)
+			highPassres,Edge,_ = HighPassFilter(img1,D_0,tp = tp)
+			lowPassres,_ = LowPassFilter(img2,D_0,tp = tp)
 			HighresimgList.append(highPassres)
 			EdgeimgList.append(Edge)
 			LowresimgList.append(lowPassres)
@@ -91,15 +93,15 @@ def Hybrid(img1,img2,kernel_type,D_0_value,idx,sigma1 = 25,sigma2 = 10):
 	
 	HybridImg = []
 	for tp in kernel_type:
-		highPassres,Edge = HighPassFilter(img1,sigma1,tp = tp)
-		lowPassres = LowPassFilter(img2,sigma2,tp = tp)
+		highPassres,Edge,_ = HighPassFilter(img1,sigma1,tp = tp)
+		lowPassres,_ = LowPassFilter(img2,sigma2,tp = tp)
 		HybridImg.append(Edge+lowPassres)
 
 	hybridres = concat_imgh(HybridImg)
 	return hybridres
 
 if __name__ == '__main__':
-	img = cv2.imread('einstein.bmp', cv2.IMREAD_COLOR)
+	img = cv2.imread('input/einstein.bmp', cv2.IMREAD_COLOR)
 	img = cv2.resize(img,(225,265))
 	row,col,channel = img.shape
 	#show(gaussian_noise(img,0,15))
@@ -107,7 +109,9 @@ if __name__ == '__main__':
 	
 	kernel_type = ['ideal','Butterworth','Gassiuan']
 	D_0_value = [10,50,100]
-	
+	#lowPassres = LowPassFilter(img,10,'ideal')
+	#show(lowPassres)
+	'''
 	imgL1 = ['Afghan_girl_after.jpg','1_bicycle.bmp','2_bird.bmp','3_cat.bmp','5_fish.bmp','6_makeup_before.jpg','a_1.png','b_1.png','einstein.bmp']
 	imgL2 = ['Afghan_girl_before.jpg','1_motorcycle.bmp','2_plane.bmp','3_dog.bmp','5_submarine.bmp','6_makeup_after.jpg','a_2.png','b_2.png','marilyn.bmp']
 
@@ -129,6 +133,6 @@ if __name__ == '__main__':
 			cv2.imwrite('result/hybrid_2/'+str(idx2)+'.jpg', hybridsres) 
 			hybrids = []
 			idx2 += 1
-			
+	'''
 	print('Done.')
 	#show(hybridsres)
