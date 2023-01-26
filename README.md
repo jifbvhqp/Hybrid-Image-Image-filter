@@ -91,22 +91,22 @@ python read_img_UI_main.py
 ## Result
 
 ### 低通濾波
-理想低通濾波器 $D_0 = 30$,$D_0 = 150$<br>
+理想低通濾波器 $D_0 = 30 vs D_0 = 150$<br>
 ![ideal1](https://user-images.githubusercontent.com/49235533/214922513-17da2639-b24b-4c2e-aee7-5ab8464ed388.JPG)
 
-巴特沃斯低通濾波器 $D_0 = 30$ $n = 2$,$D_0 = 30$ $n = 20$<br>
+巴特沃斯低通濾波器 $D_0 = 30,n = 2 vs D_0 = 30,n = 20$<br>
 ![ba_2](https://user-images.githubusercontent.com/49235533/214922557-4d9239ba-4f18-4ec2-8814-b17f6dbb1338.JPG)
 
-巴特沃斯低通濾波器 $D_0 = 150$ $n = 2$,$D_0 = 150$ $n = 20$<br>
+巴特沃斯低通濾波器 $D_0 = 150,n = 2 vs D_0 = 150,n = 20$<br>
 ![ba_3](https://user-images.githubusercontent.com/49235533/214922573-10af3bc1-67d9-4ea1-8027-75eebc12d210.JPG)
 
-巴特沃斯低通濾波器 $D_0 = 30$ $n = 2$,$D_0 = 150$ $n = 2$<br>
+巴特沃斯低通濾波器 $D_0 = 30, n = 2 vs D_0 = 150 ,n = 2$<br>
 ![ba_5](https://user-images.githubusercontent.com/49235533/214922582-ba7bc8c8-7d29-42b6-a29c-85f249bb4262.JPG)
 
-巴特沃斯低通濾波器 $D_0 = 30$ $n = 20$,$D_0 = 150$ $n = 20$<br>
+巴特沃斯低通濾波器 $D_0 = 30,n = 20 vs D_0 = 150,n = 20$<br>
 ![ba_6](https://user-images.githubusercontent.com/49235533/214922589-4d6184fc-b709-40db-a79d-91707215f9be.JPG)
 
-高斯低通濾波器 $D_0 = 30$,$D_0 = 150$<br>
+高斯低通濾波器 $D_0 = 30 vs D_0 = 150$<br>
 ![ga_1](https://user-images.githubusercontent.com/49235533/214922602-11a8a57d-6194-4329-b1f8-c96d44fb24f2.JPG)
 
 ### 高通濾波(濾波結果與原圖疊加)
