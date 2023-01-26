@@ -46,7 +46,6 @@ def set_canvas_image(canvas,img,channel,edges_img = False):
     canvas.tk_img = tk_img                                  # 修改屬性更新畫面
 
 def update(img,canvas,subcanvas,subedgesCanvas,side,d_0 = init_d_0,n = init_n): 
-    
     if side == 'left':
         if left_filter_type == 'ideal':
             if left_filter == 'low_pass':
@@ -118,39 +117,66 @@ def show(canvas,subcanvas,subedgesCanvas,side):
         right_image = img
     update(img,canvas,subcanvas,subedgesCanvas,side)
 
-def set_filter(filter_num,canvas,subcanvas,subedgesCanvas,stringText,side):
+def set_filter(filter_num,canvas,subcanvas,subedgesCanvas,filterlabel,stringText,side):
     global left_filter
     global right_filter
     if side == 'left':
+        if left_filter_type == 'ideal':
+            tx = '理想'
+        elif left_filter_type == 'Butterworth':
+            tx = '巴特沃斯'
+        else:
+            tx = '高斯'
+
         if filter_num == 1:
             left_filter = 'low_pass'
+            filterlabel.set(tx+'低通濾波器')
         elif filter_num == 2:   
             left_filter = 'high_pass'
+            filterlabel.set(tx+'高通濾波器')
     else:
+        if right_filter_type == 'ideal':
+            tx = '理想'
+        elif right_filter_type == 'Butterworth':
+            tx = '巴特沃斯'
+        else:
+            tx = '高斯'
         if filter_num == 1:
             right_filter = 'low_pass'
+            filterlabel.set(tx+'低通濾波器')
         elif filter_num == 2:   
             right_filter = 'high_pass'
+            filterlabel.set(tx+'高通濾波器')
+
     image = left_image if side == 'left' else right_image
     update(image,canvas,subcanvas,subedgesCanvas,side,d_0 = int(stringText.get()))
 
-def set_filter_type(filter_type_num,canvas,subcanvas,subedgesCanvas,stringText,side):
+def set_filter_type(filter_type_num,canvas,subcanvas,subedgesCanvas,filterlabel,stringText,side):
     global left_filter_type
     global right_filter_type
+
     if side == 'left':
+        tx = '高通' if left_filter == 'high_pass' else '低通'
         if filter_type_num == 1:
             left_filter_type = 'ideal'
+            filterlabel.set('理想'+tx+'濾波器')
         elif filter_type_num == 2:   
             left_filter_type = 'Butterworth'
+            filterlabel.set('巴特沃斯'+tx+'濾波器')
         elif filter_type_num == 3:
             left_filter_type = 'Gassiuan'
+            filterlabel.set('高斯'+tx+'濾波器')
     else:
+        tx = '高通' if right_filter == 'high_pass' else '低通'
         if filter_type_num == 1:
             right_filter_type = 'ideal'
+            filterlabel.set('理想'+tx+'濾波器')
         elif filter_type_num == 2:   
             right_filter_type = 'Butterworth'
+            filterlabel.set('巴特沃斯'+tx+'濾波器')
         elif filter_type_num == 3:
             right_filter_type = 'Gassiuan'
+            filterlabel.set('高斯'+tx+'濾波器')
     image = left_image if side == 'left' else right_image
     update(image,canvas,subcanvas,subedgesCanvas,side,d_0 = int(stringText.get()))
 
@@ -182,34 +208,36 @@ sub_edgesCanvas_left = tk.Canvas(frame, width=90, height=90, bg='#fff')
 sub_edgesCanvas_left.place(x=0,y=380,height=90,width=90)
 
 left_value = tk.StringVar()   # 定義文字變數
+#left_value.set('d₀='+str(init_d_0))
 left_value.set(str(init_d_0))
 
 scale_h_left = ttk.Scale(root, from_=30, to=150, orient='horizontal', command=lambda e: update_value(canvas_left,sub_canvas_left,sub_edgesCanvas_left,scale_h_left,'left',left_value))  # 改變時執行 show
 scale_h_left.set(init_d_0)
 scale_h_left.place(x=255,y=560)
 
-low_filter_button_left = tk.Button(root, text='低通濾波器',command=lambda: set_filter(1,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_value,'left'))
+low_filter_button_left = tk.Button(root, text='低通濾波器',command=lambda: set_filter(1,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_filterlabel,left_value,'left'))
 low_filter_button_left.place(x=2,y=50,height=20,width=70)
 
-high_filter_button_left = tk.Button(root, text='高通濾波器',command=lambda: set_filter(2,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_value,'left'))
+high_filter_button_left = tk.Button(root, text='高通濾波器',command=lambda: set_filter(2,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_filterlabel,left_value,'left'))
 high_filter_button_left.place(x=2,y=70,height=20,width=70)
 
-ideal_filter_button_left = tk.Button(root, text='理想濾波器',command=lambda: set_filter_type(1,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_value,'left'))
+ideal_filter_button_left = tk.Button(root, text='理想濾波器',command=lambda: set_filter_type(1,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_filterlabel,left_value,'left'))
 ideal_filter_button_left.place(x=2,y=110,height=20,width=70)
 
-Butterworth_filter_button_left = tk.Button(root, text='巴斯沃特濾波',command=lambda: set_filter_type(2,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_value,'left'))
+Butterworth_filter_button_left = tk.Button(root, text='巴斯沃特濾波',command=lambda: set_filter_type(2,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_filterlabel,left_value,'left'))
 Butterworth_filter_button_left.place(x=2,y=130,height=20,width=70)
 
-Gassuian_filter_button_left = tk.Button(root, text='高斯濾波器',command=lambda: set_filter_type(3,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_value,'left'))
+Gassuian_filter_button_left = tk.Button(root, text='高斯濾波器',command=lambda: set_filter_type(3,canvas_left,sub_canvas_left,sub_edgesCanvas_left,left_filterlabel,left_value,'left'))
 Gassuian_filter_button_left.place(x=2,y=150,height=20,width=70)
 
 button_left = tk.Button(root, text='開啟圖片', command=lambda: show(canvas_left,sub_canvas_left,sub_edgesCanvas_left,'left'))
 button_left.place(x=280,y=540,height=20,width=50)
 
 label_left = tk.Label(root, textvariable=left_value)
-label_left.place(x=290,y=585,height=15,width=30)
+label_left.place(x=290,y=585,height=15,width=50)
 
 left_n = tk.StringVar() 
+#left_n.set('n='+str(init_n))
 left_n.set(str(init_n))
 
 scale_h_left_n = ttk.Scale(root, from_=2, to=20, orient='horizontal', command=lambda e: update_n(canvas_left,sub_canvas_left,sub_edgesCanvas_left,scale_h_left,scale_h_left_n,'left',left_n))  # 改變時執行 show
@@ -217,8 +245,13 @@ scale_h_left_n.set(init_n)
 scale_h_left_n.place(x=380,y=560)
 
 label_left_n = tk.Label(root, textvariable=left_n)
-label_left_n.place(x=415,y=585,height=15,width=30)
+label_left_n.place(x=415,y=585,height=15,width=50)
 
+left_filterlabel = tk.StringVar() 
+left_filterlabel.set(str('理想低通濾波器'))
+
+label_filter_left = tk.Label(root, textvariable=left_filterlabel)
+label_filter_left.place(x=80,y=570,height=15,width=150)
 
 canvas_right = tk.Canvas(frame, width=window_size[0], height=window_size[1], bg='#fff')
 canvas_right.place(x=650,y=5,height=window_size[1],width=window_size[0])
@@ -233,6 +266,7 @@ button_right = tk.Button(root, text='開啟圖片', command=lambda: show(canvas_
 button_right.place(x=850,y=540,height=20,width=50)
 
 right_value = tk.StringVar()   # 定義文字變數
+#right_value.set('d₀='+str(init_d_0))
 right_value.set(str(init_d_0))
 
 scale_h_right = ttk.Scale(root, from_=30, to=150, orient='horizontal', command=lambda e: update_value(canvas_right,sub_canvas_right,sub_edgesCanvas_right,scale_h_right,'right',right_value))  # 改變時執行 show
@@ -240,9 +274,10 @@ scale_h_right.set(init_d_0)
 scale_h_right.place(x=825,y=560)
 
 label_right = tk.Label(root, textvariable=right_value)
-label_right.place(x=860,y=585,height=15,width=30)
+label_right.place(x=860,y=585,height=15,width=50)
 
 right_n = tk.StringVar() 
+#right_n.set('n='+str(init_n))
 right_n.set(str(init_n))
 
 scale_h_right_n = ttk.Scale(root, from_=2, to=20, orient='horizontal', command=lambda e: update_n(canvas_right,sub_canvas_right,sub_edgesCanvas_right,scale_h_right,scale_h_right_n,'right',right_n))  # 改變時執行 show
@@ -250,22 +285,27 @@ scale_h_right_n.set(init_n)
 scale_h_right_n.place(x=950,y=560)
 
 label_right_n = tk.Label(root, textvariable=right_n)
-label_right_n.place(x=985,y=585,height=15,width=30)
+label_right_n.place(x=985,y=585,height=15,width=50)
 
+right_filterlabel = tk.StringVar() 
+right_filterlabel.set(str('理想低通濾波器'))
 
-low_filter_button_right = tk.Button(root, text='低通濾波器',command=lambda: set_filter(1,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_value,'right'))
+label_filter_right = tk.Label(root, textvariable=right_filterlabel)
+label_filter_right.place(x=650,y=570,height=15,width=150)
+
+low_filter_button_right = tk.Button(root, text='低通濾波器',command=lambda: set_filter(1,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_filterlabel,right_value,'right'))
 low_filter_button_right.place(x=1125,y=50,height=20,width=70)
 
-high_filter_button_right = tk.Button(root, text='高通濾波器',command=lambda: set_filter(2,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_value,'right'))
+high_filter_button_right = tk.Button(root, text='高通濾波器',command=lambda: set_filter(2,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_filterlabel,right_value,'right'))
 high_filter_button_right.place(x=1125,y=70,height=20,width=70)
 
-ideal_filter_button_right = tk.Button(root, text='理想濾波器',command=lambda: set_filter_type(1,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_value,'right'))
+ideal_filter_button_right = tk.Button(root, text='理想濾波器',command=lambda: set_filter_type(1,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_filterlabel,right_value,'right'))
 ideal_filter_button_right.place(x=1125,y=110,height=20,width=70)
 
-Butterworth_filter_button_right = tk.Button(root, text='巴斯沃特濾波',command=lambda: set_filter_type(2,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_value,'right'))
+Butterworth_filter_button_right = tk.Button(root, text='巴斯沃特濾波',command=lambda: set_filter_type(2,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_filterlabel,right_value,'right'))
 Butterworth_filter_button_right.place(x=1125,y=130,height=20,width=70)
 
-Gassuian_filter_button_right = tk.Button(root, text='高斯濾波器',command=lambda: set_filter_type(3,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_value,'right'))
+Gassuian_filter_button_right = tk.Button(root, text='高斯濾波器',command=lambda: set_filter_type(3,canvas_right,sub_canvas_right,sub_edgesCanvas_right,right_filterlabel,right_value,'right'))
 Gassuian_filter_button_right.place(x=1125,y=150,height=20,width=70)
 
 
