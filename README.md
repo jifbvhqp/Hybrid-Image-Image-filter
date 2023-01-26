@@ -83,3 +83,7 @@ $$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{j2\pi(ux/m + 
 
 其他結果可參考result資料夾內
 
+## excute UI_ReadImage
+```C
+python read_img_UI_main.py
+```
