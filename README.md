@@ -91,6 +91,7 @@ python read_img_UI_main.py
 ## Result
 
 ### 低通濾波
+            $D_0 = 30$,                                                            $D_0 = 150$<br>
 ![ideal1](https://user-images.githubusercontent.com/49235533/214922513-17da2639-b24b-4c2e-aee7-5ab8464ed388.JPG)
 
 ![ba_2](https://user-images.githubusercontent.com/49235533/214922557-4d9239ba-4f18-4ec2-8814-b17f6dbb1338.JPG)
