@@ -91,7 +91,7 @@ python read_img_UI_main.py
 ## Result
 
 ### 低通濾波
-理想低通濾波器 $D_0 = 30 vs D_0 = 150$<br>
+理想低通濾波器 $D_0 = 30 \text{ vs } D_0 = 150$<br>
 ![ideal1](https://user-images.githubusercontent.com/49235533/214922513-17da2639-b24b-4c2e-aee7-5ab8464ed388.JPG)
 
 巴特沃斯低通濾波器 $D_0 = 30,n = 2 vs D_0 = 30,n = 20$<br>
