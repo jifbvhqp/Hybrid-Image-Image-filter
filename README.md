@@ -110,22 +110,22 @@ python read_img_UI_main.py
 ![ga_1](https://user-images.githubusercontent.com/49235533/214922602-11a8a57d-6194-4329-b1f8-c96d44fb24f2.JPG)
 
 ### 高通濾波(濾波結果與原圖疊加)
-理想高通濾波器 $D_0 = 30$,$D_0 = 150$<br>
+理想高通濾波器 $D_0 = 30,D_0 = 150$<br>
 ![ideal_1](https://user-images.githubusercontent.com/49235533/214922625-d6259109-1e3d-4f0b-a921-800e29ba32de.JPG)
 
-巴特沃斯高通濾波器 $D_0 = 30$ $n = 2$,$D_0 = 30$ $n = 20$<br>
+巴特沃斯高通濾波器 $D_0 = 30 n = 2,D_0 = 30 n = 20$<br>
 ![ba_2 5](https://user-images.githubusercontent.com/49235533/214922635-55f5aa47-2d40-4a19-9fb6-a191a6960ab0.JPG)
 
-巴特沃斯高通濾波器 $D_0 = 150$ $n = 2$,$D_0 = 150$ $n = 20$<br>
+巴特沃斯高通濾波器 $D_0 = 150 n = 2,D_0 = 150 n = 20$<br>
 ![ba_3 5](https://user-images.githubusercontent.com/49235533/214922644-0f3a2e7b-5ada-41b7-a98d-59581455919b.JPG)
 
-巴特沃斯高通濾波器 $D_0 = 30$ $n = 2$,$D_0 = 150$ $n = 2$<br>
+巴特沃斯高通濾波器 $D_0 = 30 n = 2,D_0 = 150 n = 2$<br>
 ![ba_5 5](https://user-images.githubusercontent.com/49235533/214922660-2f18a028-ccc8-421d-9750-ea94b35388f5.JPG)
 
-巴特沃斯高通濾波器 $D_0 = 30$ $n = 20$,$D_0 = 150$ $n = 20$<br>
+巴特沃斯高通濾波器 $D_0 = 30 n = 20,D_0 = 150 n = 20$<br>
 ![ba_6 5](https://user-images.githubusercontent.com/49235533/214922677-12cfde05-bcba-438b-83cc-ebc1d6cd0c49.JPG)
 
-高斯高通濾波器 $D_0 = 30$,$D_0 = 150$<br>
+高斯高通濾波器 $D_0 = 30,D_0 = 150$<br>
 ![ga_2](https://user-images.githubusercontent.com/49235533/214922687-a742bf63-955b-4f16-b246-d1cc10c27e58.JPG)
 
 
