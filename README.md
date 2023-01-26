@@ -88,7 +88,9 @@ $$f(x,y) = \frac{1}{mn} \sum_{u=0}^{m-1} \sum_{v=0}^{n-1} F(u,v)e^{j2\pi(ux/m + 
 python read_img_UI_main.py
 ```
 
-### Result
+## Result
+
+### 低通濾波
 ![ideal1](https://user-images.githubusercontent.com/49235533/214922513-17da2639-b24b-4c2e-aee7-5ab8464ed388.JPG)
 
 ![ba_2](https://user-images.githubusercontent.com/49235533/214922557-4d9239ba-4f18-4ec2-8814-b17f6dbb1338.JPG)
@@ -101,6 +103,7 @@ python read_img_UI_main.py
 
 ![ga_1](https://user-images.githubusercontent.com/49235533/214922602-11a8a57d-6194-4329-b1f8-c96d44fb24f2.JPG)
 
+### 高通濾波(濾波結果與原圖疊加)
 ![ideal_1](https://user-images.githubusercontent.com/49235533/214922625-d6259109-1e3d-4f0b-a921-800e29ba32de.JPG)
 
 ![ba_2 5](https://user-images.githubusercontent.com/49235533/214922635-55f5aa47-2d40-4a19-9fb6-a191a6960ab0.JPG)
